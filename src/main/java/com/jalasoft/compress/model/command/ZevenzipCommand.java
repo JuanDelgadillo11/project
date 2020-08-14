@@ -1,4 +1,10 @@
 package com.jalasoft.compress.model.command;
 
-public class ZevenzipCommand {
+import com.jalasoft.compress.model.parameter.CompressorParameter;
+
+public class ZevenzipCommand implements ICommandBuilder{
+    @Override
+    public String buildCommand(CompressorParameter compressorParameter) throws Exception {
+        return null;
+    }
 }

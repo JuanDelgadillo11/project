@@ -56,8 +56,14 @@ public class CompressorParameter {
     public void setFile(File file) {
         this.file = file;
     }
-    //metodo que valida los campos que me llegan del Postman y lo manejo con errores
+    //metodo que valida los campos que me llegan del Postman y lo manejo con errores (MEJORAR ESTA VALIDACION)
     public void validate() throws Exception {
-        throw new Exception("Invalid Parameters");
+        if (this.compressorFolder == null || this.compressorFolder.isEmpty()){
+            throw new Exception("Invalid compressorFolder");
+        }
+        File compressorFolderPath = new File(this.compressorFolder);
+        if (!compressorFolderPath.isDirectory() || compressorFolderPath.isHidden()){
+            throw new Exception("Invalid compressorFolder");
+        }
     }
 }

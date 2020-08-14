@@ -1,4 +1,10 @@
 package com.jalasoft.compress.model.command;
 
-public class WinzipCommand {
+import com.jalasoft.compress.model.parameter.CompressorParameter;
+
+public class WinzipCommand implements ICommandBuilder{
+    @Override
+    public String buildCommand(CompressorParameter compressorParameter) throws Exception {
+        return null;
+    }
 }
