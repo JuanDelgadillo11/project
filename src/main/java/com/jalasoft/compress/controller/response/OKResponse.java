@@ -1,13 +1,13 @@
 package com.jalasoft.compress.controller.response;
 
-public class OKResponse extends Response {
+public class OKResponse<T> extends Response {
     private String message;
-    private String pid;
+    private String compressedFileFolderPath;
 
-    public OKResponse(String status, String message, String pid) {
+    public OKResponse(T status, String message, String compressedFileFolder) {
         super(status);
         this.message = message;
-        this.pid = pid;
+        this.compressedFileFolderPath = compressedFileFolder;
     }
 
     public String getMessage() {
@@ -18,11 +18,11 @@ public class OKResponse extends Response {
         this.message = message;
     }
 
-    public String getPid() {
-        return pid;
+    public String getCompressedFileFolderPath() {
+        return compressedFileFolderPath;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid;
+    public void setCompressedFileFolderPath(String compressedFileFolderPath) {
+        this.compressedFileFolderPath = compressedFileFolderPath;
     }
 }

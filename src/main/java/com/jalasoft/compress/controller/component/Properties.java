@@ -1,16 +1,9 @@
 package com.jalasoft.compress.controller.component;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import com.jalasoft.compress.controller.exception.PropertyException;
 
-@Component // reconocer esta clase como componente para usar el autowrite y solo tener una instancia
-// de application.properties
-@ConfigurationProperties(prefix = "execute")//Saca la información de resources>application.properties que tengan execute
-public class Properties {
+public abstract class Properties {
     private String projectFolder;
-    private String winrarPath;
-    private String winzipPath;
-    private String zevenzipPath;
 
     public String getProjectFolder() {
         return projectFolder;
@@ -20,27 +13,6 @@ public class Properties {
         this.projectFolder = projectFolder;
     }
 
-    public String getWinrarPath() {
-        return winrarPath;
-    }
+    public abstract String getLanguageFolder(String version) throws PropertyException;
 
-    public void setWinrarPath(String winrarPath) {
-        this.winrarPath = winrarPath;
-    }
-
-    public String getWinzipPath() {
-        return winzipPath;
-    }
-
-    public void setWinzipPath(String winzipPath) {
-        this.winzipPath = winzipPath;
-    }
-
-    public String getZevenzipPath() {
-        return zevenzipPath;
-    }
-
-    public void setZevenzipPath(String zevenzipPath) {
-        this.zevenzipPath = zevenzipPath;
-    }
 }

@@ -1,7 +1,8 @@
 package com.jalasoft.compress.model.command;
 
-import com.jalasoft.compress.model.parameter.CompressorParameter;
+import com.jalasoft.compress.common.exception.InvalidDataException;
+import com.jalasoft.compress.model.exception.CommandException;
 
-public interface ICommandBuilder {
-    String buildCommand(CompressorParameter compressorParameter) throws Exception;
+public interface ICommandBuilder<T> {
+    String buildCommand(T parameter) throws InvalidDataException, CommandException;
 }

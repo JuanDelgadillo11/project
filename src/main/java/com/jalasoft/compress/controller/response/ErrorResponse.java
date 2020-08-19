@@ -1,9 +1,9 @@
 package com.jalasoft.compress.controller.response;
 
-public class ErrorResponse extends Response{
+public class ErrorResponse<T> extends Response{
     private String error;
 
-    public ErrorResponse(String status, String error) {
+    public ErrorResponse(T status, String error) {
         super(status);
         this.error = error;
     }

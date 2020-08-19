@@ -1,17 +1,17 @@
 package com.jalasoft.compress.controller.response;
-// Lo defino como abstracto porque no voy a necesitar instanciar esta clase
-public abstract class Response {
-    private String status;
 
-    public Response(String status) {
+public abstract class Response<T> {
+    private T status;
+
+    public Response(T status) {
         this.status = status;
     }
 
-    public String getStatus() {
+    public T getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(T status) {
         this.status = status;
     }
 }
